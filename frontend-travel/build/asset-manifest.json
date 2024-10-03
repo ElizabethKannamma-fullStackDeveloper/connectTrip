@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/static/css/main.a6a999a4.css",
+    "main.js": "/static/js/main.aeb10f72.js",
+    "static/media/car.jpg": "/static/media/car.5f4d30b7d1d1d36bf096.jpg",
+    "static/media/banner.jpg": "/static/media/banner.4afc4bf701fe215908fc.jpg",
+    "static/media/activities.jpg": "/static/media/activities.253d940d57b8394bc3f1.jpg",
+    "static/media/Questrial-Regular.ttf": "/static/media/Questrial-Regular.8268e81790f4302669b7.ttf",
+    "static/media/404.png": "/static/media/404.27df96fefd06d8c3b5b0.png",
+    "static/media/flights.jpg": "/static/media/flights.d7cdda286e36077667a4.jpg",
+    "index.html": "/index.html",
+    "main.a6a999a4.css.map": "/static/css/main.a6a999a4.css.map",
+    "main.aeb10f72.js.map": "/static/js/main.aeb10f72.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a6a999a4.css",
+    "static/js/main.aeb10f72.js"
+  ]
+}

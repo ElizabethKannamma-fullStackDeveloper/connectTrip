@@ -29,4 +29,37 @@ const carListingRegister = asyncHandler( async (req,res) => {
     return res.status(201).json( new ApiResponce(201, carListing, "carListing created successfully"));
 });
 
-export {carListingRegister}
+const carListingUpdate = asyncHandler( async (req,res) => {
+    const {id} = req.params;
+    // console.log(id);
+    const {essentialFields,additionalFields,rentalSpecificFields,companyOwnerDetails,safetyAndSecurityFeatures,insuranceAndWarranty,otherFeatures} = req.body;
+    
+
+    if(!essentialFields && !additionalFields && !rentalSpecificFields && !companyOwnerDetails && !safetyAndSecurityFeatures && !insuranceAndWarranty)
+            throw new ApiError(400,"All fields are mendatory");
+
+    const carListing = await CarListing.findOne({_id: id});
+
+    if(!carListing) throw new ApiError(400,"carType does not exists");
+
+    
+
+    const updateCarListing = await CarListing.findOneAndUpdate({_id : id},{
+        $set : {
+            essentialFields,
+            additionalFields,
+            rentalSpecificFields,
+            companyOwnerDetails,
+            safetyAndSecurityFeatures,
+            insuranceAndWarranty,
+            otherFeatures
+        }
+    },{new: true});
+
+    if(!updateCarListing) throw new ApiError(400, "carListing not updated some error occurred");
+
+    return res.status(201).json(new ApiResponce(201,updateCarListing,"carListing Updated successfully"));
+});
+
+
+export {carListingRegister,carListingUpdate}
